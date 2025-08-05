@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  '/assets/images/industry1.jpg',
-  '/assets/images/industry2.jpg',
-  '/assets/images/industry3.jpg',
-  '/assets/images/industry4.jpg',
-  '/assets/images/industry5.jpg',
+  '/assets/images/spinning-mill.jpg',
+  '/assets/images/garment-industry.jpg',
+  '/assets/images/textile-industry.jpg',
+  '/assets/images/sewing-machine-closeup.jpg',
+  '/assets/images/sewing-machine-needle.jpg',
 ];
 
 const TextileIndustriesCarousel = () => {
@@ -27,7 +27,6 @@ const TextileIndustriesCarousel = () => {
 
   return (
     <div className="w-full flex flex-col items-center py-12">
-      <h2 className="text-2xl font-bold mb-6 text-center text-foreground">Textile Industries</h2>
       <div className="relative w-full max-w-4xl h-80 flex items-center justify-center overflow-visible">
         <button
           className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-200 rounded-full p-2 z-10 hover:bg-gray-300"
