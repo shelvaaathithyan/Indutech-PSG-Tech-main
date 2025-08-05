@@ -37,7 +37,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background w-full max-w-full overflow-x-hidden">
       <Header />
       {/* Main Content */}
       <main>
@@ -74,55 +74,59 @@ const HomePage = () => {
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">In Collaboration With</h2>
-              {/* Partner Logos Section (moved here) */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center mb-12">
-                <div className="flex flex-col items-center justify-center h-40">
-                  <img 
-                    src="/assets/images/ministry.png" 
-                    alt="Ministry of Textiles" 
-                    className="max-h-full max-w-full object-contain"
-                  />
-                  <span className="mt-4 text-base font-semibold text-gray-800 text-center">Ministry of Textiles</span>
-                </div>
-                <div className="flex flex-col items-center justify-center h-40">
-                  <img 
-                    src="/assets/images/deakin-logo-transparent.png" 
-                    alt="Deakin University" 
-                    className="max-h-full max-w-full object-contain"
-                  />
-                  <span className="mt-4 text-base font-semibold text-gray-800 text-center">Deakin University</span>
-                </div>
-                <div className="flex flex-col items-center justify-center h-40">
-                  <img 
-                    src="/assets/images/uni_man.jpg" 
-                    alt="University of Manchester" 
-                    className="max-h-full max-w-full object-contain"
-                  />
-                  <span className="mt-4 text-base font-semibold text-gray-800 text-center">University of Manchester</span>
-                </div>
-              </div>
-              {/* Collaboration Cards Section */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">In Collaboration With</h2>
+              
+              {/* Partner Organizations */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+                
                 {/* Ministry of Textiles */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">OFFICE OF THE TEXTILE COMMISSIONER</h3>
-                  <p className="text-cyan-700 font-semibold text-center">MINISTRY OF TEXTILES</p>
-                  <p className="text-gray-600 text-center">GOVERNMENT OF INDIA</p>
+                <div className="flex flex-col items-center space-y-6">
+                  <div className="w-full max-w-xs h-32 flex items-center justify-center bg-white p-4 rounded-lg shadow-sm">
+                    <img 
+                      src="/assets/images/ministry.png" 
+                      alt="Ministry of Textiles" 
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
+                  <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center w-full max-w-sm h-[160px] flex flex-col justify-center">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">OFFICE OF THE TEXTILE COMMISSIONER</h3>
+                    <p className="text-cyan-700 font-semibold">MINISTRY OF TEXTILES</p>
+                    <p className="text-gray-600 text-sm mt-1">GOVERNMENT OF INDIA</p>
+                  </div>
                 </div>
 
                 {/* Deakin University */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">INSTITUTE FOR FRONTIER MATERIALS (IFM)</h3>
-                  <p className="text-cyan-700 font-semibold text-center">DEAKIN UNIVERSITY, AUSTRALIA</p>
+                <div className="flex flex-col items-center space-y-6">
+                  <div className="w-full max-w-xs h-32 flex items-center justify-center bg-white p-4 rounded-lg shadow-sm">
+                    <img 
+                      src="/assets/images/deakin-logo-transparent.png" 
+                      alt="Deakin University" 
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
+                  <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center w-full max-w-sm h-[160px] flex flex-col justify-center">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">INSTITUTE FOR FRONTIER MATERIALS (IFM)</h3>
+                    <p className="text-cyan-700 font-semibold">DEAKIN UNIVERSITY</p>
+                    <p className="text-gray-600 text-sm mt-1">AUSTRALIA</p>
+                  </div>
                 </div>
 
                 {/* University of Manchester */}
-                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">NORTHWEST COMPOSITES CENTRE</h3>
-                  <p className="text-cyan-700 font-semibold text-center">DEPARTMENT OF MATERIALS,</p>
-                  <p className="text-gray-600 text-center">UNIVERSITY OF MANCHESTER</p>
+                <div className="flex flex-col items-center space-y-6 md:col-span-2 lg:col-span-1 md:mx-auto lg:mx-0">
+                  <div className="w-full max-w-xs h-32 flex items-center justify-center bg-white p-4 rounded-lg shadow-sm">
+                    <img 
+                      src="/assets/images/uni_man.jpg" 
+                      alt="University of Manchester" 
+                      className="max-h-full max-w-full object-contain rounded"
+                    />
+                  </div>
+                  <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center w-full max-w-sm h-[160px] flex flex-col justify-center">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">NORTHWEST COMPOSITES CENTRE</h3>
+                    <p className="text-cyan-700 font-semibold">UNIVERSITY OF MANCHESTER</p>
+                    <p className="text-gray-600 text-sm mt-1">UNITED KINGDOM</p>
+                  </div>
                 </div>
+                
               </div>
             </div>
           </div>
