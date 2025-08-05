@@ -11,11 +11,23 @@ const images = [
 
 const TextileIndustriesCarousel = () => {
   const [current, setCurrent] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const total = images.length;
-
 
   const prevSlide = () => setCurrent((current - 1 + total) % total);
   const nextSlide = () => setCurrent((current + 1) % total);
+
+  // Check for mobile view
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Auto-slide effect
   useEffect(() => {
@@ -26,8 +38,8 @@ const TextileIndustriesCarousel = () => {
   }, [total]);
 
   return (
-    <div className="w-full flex flex-col items-center py-12">
-      <div className="relative w-full max-w-4xl h-80 flex items-center justify-center overflow-visible">
+    <div className="w-full flex flex-col items-center py-8 sm:py-12 overflow-hidden px-4">
+      <div className="relative w-full max-w-4xl h-64 sm:h-80 flex items-center justify-center overflow-hidden">
         <button
           className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-200 rounded-full p-2 z-10 hover:bg-gray-300"
           onClick={prevSlide}
@@ -49,7 +61,7 @@ const TextileIndustriesCarousel = () => {
             const scale = isCenter ? 1 : 0.7;
             const zIndex = 10 - Math.abs(pos);
             const opacity = isCenter ? 1 : 0.5;
-            const translateX = pos * 120;
+            const translateX = pos * (isMobile ? 50 : 120); // Further reduce spacing on mobile
             const blur = isCenter ? 'none' : 'blur-sm';
             return (
               <img
@@ -63,8 +75,8 @@ const TextileIndustriesCarousel = () => {
                   transform: `translate(-50%, -50%) translateX(${translateX}px) scale(${scale})`,
                   zIndex,
                   opacity,
-                  width: isCenter ? '320px' : '200px',
-                  height: isCenter ? '320px' : '200px',
+                  width: isCenter ? (isMobile ? '180px' : '320px') : (isMobile ? '120px' : '200px'),
+                  height: isCenter ? (isMobile ? '180px' : '320px') : (isMobile ? '120px' : '200px'),
                   boxShadow: isCenter ? '0 8px 32px rgba(0,0,0,0.10)' : 'none',
                   borderRadius: '1rem',
                   background: 'transparent',
