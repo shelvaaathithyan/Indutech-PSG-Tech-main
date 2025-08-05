@@ -202,7 +202,7 @@ const HomePage = () => {
               <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <div className="text-base text-white/80 space-y-2">
                 <p>Conference Secretariat</p>
-                <p>Email: psgindutech@psgtech.ac.in</p>
+                <p>Email: indutechconf@psgtech.ac.in</p>
                 <p>Phone: +91-422-2572177</p>
                 <p>Address: PSG College of Technology, Coimbatore, India</p>
               </div>
