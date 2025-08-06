@@ -2,11 +2,15 @@
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  '/assets/images/spinning-mill.jpg',
-  '/assets/images/garment-industry.jpg',
-  '/assets/images/textile-industry.jpg',
-  '/assets/images/sewing-machine-closeup.jpg',
-  '/assets/images/sewing-machine-needle.jpg',
+  '/assets/images/0.png',
+  '/assets/images/3.png',
+  '/assets/images/4.png',
+  '/assets/images/5.png',
+  '/assets/images/6.png',
+  '/assets/images/7.png',
+  '/assets/images/8.png',
+  '/assets/images/9.png',
+  '/assets/images/10.png',
 ];
 
 const TextileIndustriesCarousel = () => {
@@ -67,7 +71,7 @@ const TextileIndustriesCarousel = () => {
               <img
                 key={idx}
                 src={img}
-                alt={`Textile Industry ${idx + 1}`}
+                alt={`Conference Image ${idx + 1}`}
                 className={`absolute transition-all duration-500 ease-in-out ${blur}`}
                 style={{
                   left: '50%',
